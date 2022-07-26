@@ -60,7 +60,7 @@ Shawn Hymel's dataset contains the words:
 
 In addition to words, background noise samples were also imported to augment the dataset by generating new samples by combining background noises with the current samples as well as changing the pitch.
 
-For the project, only two keywords were chosen in order to abide to the project goal of deploying on microcontrollers or smartphones. The chosen commands are `goodnight` and `up`. In order to create a model able to identify the two words chosen, there need to be more than these two classes. THe four classes needed are:
+For the project, only two keywords were chosen in order to abide to the project goal of deploying on microcontrollers or smartphones. The chosen commands are `goodnight` and `up`. In order to create a model able to identify the two words chosen, there need to be more than these two classes. The four classes needed are:
 * goodnight
 * up
 * unknown
@@ -68,7 +68,7 @@ For the project, only two keywords were chosen in order to abide to the project 
 
 The unknown class is composed of non trigger words that don't bear a high similarity to the two keywords. This class and the random background class are needed to best enable the model to differentiate what words are spoken (whether they are the keywords or not) in addition to *if* words were being spoken.
 
-So first, these datasets were imported and the 4 desired classes were separated then individually randomized. This was done in pGoogle Colab](https://colab.research.google.com/drive/1ZD_ZkqMV6e0_e3x2BH8uptzWTh-zBYUm?usp=sharing), credits to Shawn Hymel for the notebook and python script which separated the files.
+So first, these datasets were imported and the 4 desired classes were separated then individually randomized. This was done in [Google Colab](https://colab.research.google.com/drive/1ZD_ZkqMV6e0_e3x2BH8uptzWTh-zBYUm?usp=sharing), credits to Shawn Hymel for the notebook and python script which separated the files.
 
 Afterwards, the data was exported to Edge Impulse. In total, there are 20 mins of data for each of the classes, with each sample of data being 1 second long. The data was train/val/split 60/20/20. 
 
