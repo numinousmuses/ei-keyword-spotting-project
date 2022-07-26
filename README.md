@@ -10,7 +10,7 @@ As for this repository, it contains the data retrieval, neural networks, enginee
 
 ## data
 
-The data used was obtained from the Tensorflow Speech Commands Dataset as well as a [Keywords Dataset by Shawn Hymel](https://github.com/ShawnHymel/custom-speech-commands-dataset/archive/). The Tensorflow Speech Commands Dataset contains thousands of utterances of each of the following:
+The data used was obtained from the Tensorflow Speech Commands Dataset as well as a [Keywords Dataset by Shawn Hymel](https://github.com/ShawnHymel/custom-speech-commands-dataset/). The Tensorflow Speech Commands Dataset contains thousands of utterances of each of the following:
 `* Backward
 * Bed
 * Cat
@@ -78,10 +78,25 @@ Raw data visualization of samples of the up, goodnight, noise, and unknown class
 
 ## data processing
 
-The data was processed using Mel Frequency Ceptral Coefficients (MFCC), which is ideal for human voice because through processing it creates an image from the audio data, so a neural network for image classification can be employed.
+The data was processed using Mel Frequency Ceptral Coefficients (MFCC), which is ideal for human voice because through processing it creates an image from the audio data, so a neural network for image classification can be employed. MFCCs also mimic how the human ear perceives sound, meaning that the model can be considered to hear sound like humans.
 
 ![image](https://user-images.githubusercontent.com/103385201/181100274-1cccfbc2-d799-4c95-bd13-306aaaa765d2.png)
 
-Example cepstral coefficients of a sample of each class. They may look similar, but neural networks can establish patterns and differentiate between them. Also, a fun fact I learned today was that human speech is between 300-3400 Hz. The more you know. Moreover, audio data must be sampled at at least 2x the highest expected frequency, because due to the math behind FFS and MFCC, aliasing (unwanted overlaps in audio data) in a sample can occur. The theorem behind this is the Nyquist-Shannon sampling theorem. Applying this to human speech, it means you would want a sampling rate of at least 6800 Hz.
+Example cepstral coefficients of a sample of each class. They may look similar, but neural networks can establish patterns and differentiate between them. A fun fact I learned today was that human speech is between 300-3400 Hz. The more you know. Moreover, audio data must be sampled at at least 2x the highest expected frequency, because due to the math behind FFS and MFCC, aliasing (unwanted overlaps in audio data) in a sample can occur. The theorem behind this is the Nyquist-Shannon sampling theorem. Applying this to human speech, it means you would want a sampling rate of at least 6800 Hz. 
 
+## neural network
+
+The model is composed of an input layer of 650 features, a reshape layer of 13 columns, two convolutional blocks made of a 1D convolutional layer (8 neurons for the first block, 16 for the second) and dropout layer (rate 0.25), a flatten layer, then an output layer. For the convolutional layers, the kernel size chosen was 3. The neural network was trained over 100 epochs. The notebook for this model should be found under the neural network folder. In the folder are also the h5 and tflite of this model, sawed under the fules ending with `model-ver-1`. The results of the first training are found below.
+
+![image](https://user-images.githubusercontent.com/103385201/181104137-26739567-07ef-4c1b-b46c-936a82320403.png)
+
+A 92 percent accuracy isn't bad, and should be functional for the purpose of simple detection on a microcontroller or smartphone, but attempts were still made to improve the accuracy of the model. The following image is the result after increasing the epochs to 150 and adding more data augmentation:
+
+![image](https://user-images.githubusercontent.com/103385201/181106766-8417aab3-17ba-4d24-a25e-eb50ac260b5e.png)
+
+The accuracy is more or less the same. This model can be found in the neural network folder as `model-ver-2`. An important consideration to keep in mind when making the model is model size. Increasing the size of the neural network to make it a deeper neural network may increase accuracy, but it may also increase the memory consumption, which in turn affects how deployable the model is to microcontrollers. In one more attempt to increase the accuracy of the model, 2D convolutional blocks were employed.
+
+![image](https://user-images.githubusercontent.com/103385201/181109757-ea9bda2a-267a-47cd-aeb5-283af65f7718.png)
+
+Seems like the first model was the best one. This model can be found as `model-ver-3`.
 
