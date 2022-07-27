@@ -90,7 +90,7 @@ The model is composed of an input layer of 650 features, a reshape layer of 13 c
 
 Architecture:
 
-![image](https://user-images.githubusercontent.com/103385201/181151046-9feff59f-85a1-4cf4-9828-cf3e9c26fc6a.png)
+![image](https://user-images.githubusercontent.com/103385201/181151277-632a7390-b4a7-4e74-9442-6d4a96fde61f.png)
 
 Results:
 
