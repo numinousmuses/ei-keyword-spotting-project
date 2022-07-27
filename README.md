@@ -118,6 +118,14 @@ Completing this project, I learned what considerations should be made when choos
 
 For example, say the task was to determine a probabiity threshold for the positive class using the graph above (credits to Edge Impulse for the graph). If false negatives were permitted, such as in a voice activation device where a false activation is completely unwanted, then the threshold would be set to point D. However, if some false positives were permissible, but absolutely no false negatives, such as in a healthcare diagnosis model, then point A would be chosen. Choosing a threshold is a compromise between whether and how many false positives or negatives you wish to permit.
 
+# inspired projects
+## inspired projects added to my project bucket list
+These are projects I simply want to try employing any new technologies I have learned. Sometimes they're my own version of something that exists (alexa can do all some of the following projects plus more lmao), or something completely different. However I do these projects just to gain an understanding of how such real-world applications are deployed.
+* voice activated calculator
+* whats-the-weather microcontroller
+* voice activated garden plant aid and health tracker
+* high bp detection
+
 # credits
 
 Credits to the Introduction to Edge Impulse course and Shawn Hymel for the project walkthrough.
