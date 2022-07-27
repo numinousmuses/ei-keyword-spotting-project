@@ -2,7 +2,7 @@
 Keyword Spotting using Edge Impulse
 This is my second project using Edge Impulse, inspired by [my first one](https://github.com/numinousmuses/ei-smartphone-motion-project). The project uses a machine learning mdoel trained and deployed using Edge Impulse to spot the keywords `goodnight` and `up`. Since the project doesn't make use of motion sensors like accelerometers, this project should be deployable to any smartphone or microcontroller with a mic that is at least 16 bits (size of raw input data for the model). Since higher quality mics can be downscaled, there is only a minimum bit requirement for the microphone used.
 
-View the complete project on Edge Impulse.
+View the complete project on [Edge Impulse](https://studio.edgeimpulse.com/public/125467/latest).
 
 As for this repository, it contains the data retrieval, neural networks, engineered feature data, and some visualizations.
 
