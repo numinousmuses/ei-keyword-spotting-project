@@ -100,3 +100,24 @@ The accuracy is more or less the same. This model can be found in the neural net
 
 Seems like the first model was the best one. This model can be found as `model-ver-3`.
 
+## model testing
+
+The results of the testing is shown below.
+
+![image](https://user-images.githubusercontent.com/103385201/181146236-374eea98-a4fe-40c5-bbad-efdfeae06886.png)
+
+An accuracy of 89 percent. Based on the confusion matrix, `noise` and `goodnight` are able to be classified correctly almost 100% of the time, but the model is not as competent in classifying `unknown` and `up`. This is most likely due to how similar up is to some samples in the unknown dataset since up is a common phonetic component. A method to improve this would be to curate a dataset of unknowns dissimilar to `up` or to use a different keyword such as `upwards` or `to-the-sky!`.
+
+## model and implementation analysis
+
+The model collects then classifies audio snippets to detect the keywords `goodnight` and `up`. Despite having an accuracy of around 90%, this should be accurate enough for a practice project, but for proper implementation, a higher accuracy would be needed.
+
+Completing this project, I learned what considerations should be made when choosing a probability threshold for a class. 
+
+![image](https://user-images.githubusercontent.com/103385201/181146977-77326b2b-7eed-4bfd-94ba-6490e4f0ec84.png)
+
+For example, say the task was to determine a probabiity threshold for the positive class using the graph above (credits to Edge Impulse for the graph). If false negatives were permitted, such as in a voice activation device where a false activation is completely unwanted, then the threshold would be set to point D. However, if some false positives were permissible, but absolutely no false negatives, such as in a healthcare diagnosis model, then point A would be chosen. Choosing a threshold is a compromise between whether and how many false positives or negatives you wish to permit.
+
+# credits
+
+Credits to the Introduction to Edge Impulse course and Shawn Hymel for the project walkthrough.
