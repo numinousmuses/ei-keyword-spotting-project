@@ -11,7 +11,7 @@ As for this repository, it contains the data retrieval, neural networks, enginee
 ## data
 
 The data used was obtained from the Tensorflow Speech Commands Dataset as well as a [Keywords Dataset by Shawn Hymel](https://github.com/ShawnHymel/custom-speech-commands-dataset/). The Tensorflow Speech Commands Dataset contains thousands of utterances of each of the following:
-`* Backward
+* Backward
 * Bed
 * Cat
 * Dog
@@ -44,7 +44,7 @@ The data used was obtained from the Tensorflow Speech Commands Dataset as well a
 * Visual
 * Wow
 * Yes
-* Zero`
+* Zero
 
 Shawn Hymel's dataset contains the words:
 * archie
