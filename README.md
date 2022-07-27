@@ -86,7 +86,13 @@ Example cepstral coefficients of a sample of each class. They may look similar, 
 
 ## neural network
 
-The model is composed of an input layer of 650 features, a reshape layer of 13 columns, two convolutional blocks made of a 1D convolutional layer (8 neurons for the first block, 16 for the second) and dropout layer (rate 0.25), a flatten layer, then an output layer. For the convolutional layers, the kernel size chosen was 3. The neural network was trained over 100 epochs. The notebook for this model should be found under the neural network folder. In the folder are also the h5 and tflite of this model, sawed under the fules ending with `model-ver-1`. The results of the first training are found below.
+The model is composed of an input layer of 650 features, a reshape layer of 13 columns, two convolutional blocks made of a 1D convolutional layer (8 neurons for the first block, 16 for the second) and dropout layer (rate 0.25), a flatten layer, then an output layer. For the convolutional layers, the kernel size chosen was 3. The neural network was trained over 100 epochs. The notebook for this model should be found under the neural network folder. In the folder are also the h5 and tflite of this model, sawed under the fules ending with `model-ver-1`. The architecture and results of the first training are found below.
+
+Architecture:
+
+![image](https://user-images.githubusercontent.com/103385201/181151046-9feff59f-85a1-4cf4-9828-cf3e9c26fc6a.png)
+
+Results:
 
 ![image](https://user-images.githubusercontent.com/103385201/181104137-26739567-07ef-4c1b-b46c-936a82320403.png)
 
@@ -95,6 +101,10 @@ A 92 percent accuracy isn't bad, and should be functional for the purpose of sim
 ![image](https://user-images.githubusercontent.com/103385201/181106766-8417aab3-17ba-4d24-a25e-eb50ac260b5e.png)
 
 The accuracy is more or less the same. This model can be found in the neural network folder as `model-ver-2`. An important consideration to keep in mind when making the model is model size. Increasing the size of the neural network to make it a deeper neural network may increase accuracy, but it may also increase the memory consumption, which in turn affects how deployable the model is to microcontrollers. In one more attempt to increase the accuracy of the model, 2D convolutional blocks were employed.
+
+![image](https://user-images.githubusercontent.com/103385201/181151129-0c89fefc-dcd0-46e8-a596-41432ccbc9dc.png)
+
+The third model's architecture.
 
 ![image](https://user-images.githubusercontent.com/103385201/181109757-ea9bda2a-267a-47cd-aeb5-283af65f7718.png)
 
